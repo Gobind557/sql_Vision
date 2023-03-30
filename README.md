@@ -301,22 +301,12 @@ npm start
 
 You'll find the running visualizer at [http://localhost:3000](http://localhost:3000).
 
-## Testing
 
-Tests are written with the [React Testing Library](https://testing-library.com/docs/react-testing-library/example-intro). Run all of them via
 
 
 ```sh
 npm test
 ```
 
-## Maintainers
-
-Schema Visualizer is a project of Anatoli of [SQL Habit](https://www.sqlhabit.com/). Hi from Berlin! :wave: :beers:
-
-Anatoli Makarevich • [Twitter](https://twitter.com/makaroni4) • [Github](https://github.com/makaroni4)
 
 
-## License
-
-SQL Schema Visualizer is [MIT licensed](https://github.com/sqlhabit/sql_schema_visualizer/blob/main/LICENSE).

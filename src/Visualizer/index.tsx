@@ -12,7 +12,7 @@ import {
   MaximizeIcon,
   MinimizeIcon,
   InfoIcon,
-  InfoPopup,
+
   Markers
 } from "./components";
 
@@ -38,8 +38,8 @@ import {
 // this is important! You need to import the styles from the lib to make it work
 import "reactflow/dist/style.css";
 import "./Style";
-import DatabaseIcon from "./components/DatabaseIcon";
-import { DatabaseMenuPopup } from "./components/DatabaseMenuPopup";
+
+
 
 interface FlowProps {
   currentDatabase: DatabaseConfig;
@@ -59,8 +59,8 @@ const Flow: React.FC<FlowProps> = (props: FlowProps) => {
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [fullscreenOn, setFullScreen] = useState(false);
   const [infoPopupOn, setInfoPopupOn] = useState(false);
-  const [unknownDatasetOn, setUnknownDatasetOn] = useState(false);
-  const [databaseMenuPopupOn, setDatabaseMenuPopupOn] = useState(false);
+  const [, setUnknownDatasetOn] = useState(false);
+  const [, setDatabaseMenuPopupOn] = useState(false);
   const [nodeHoverActive, setNodeHoverActive] = useState(true);
 
   const onInit = (instance: ReactFlowInstance) => {
@@ -311,20 +311,11 @@ const Flow: React.FC<FlowProps> = (props: FlowProps) => {
           <ControlButton onClick={() => { setInfoPopupOn(!infoPopupOn) }} className="into-popup-toggle">
             <InfoIcon />
           </ControlButton>
-          <ControlButton onClick={() => { setDatabaseMenuPopupOn(true) }} className="into-popup-toggle">
-            <DatabaseIcon />
-          </ControlButton>
+        
         </Controls>
         <Background color="#aaa" gap={16} />
       </ReactFlow>
-      {infoPopupOn && <InfoPopup onClose={() => { setInfoPopupOn(false) }} />}
-      {unknownDatasetOn && <DatabaseMenuPopup
-        headline={"Unknown dataset :warning:"}
-        subheadline={"Available datasets :point_down:"}
-        onClose={() => { setUnknownDatasetOn(false) }} />}
-      {databaseMenuPopupOn && <DatabaseMenuPopup
-        headline={"Choose a dataset :point_down:"}
-        onClose={() => { setDatabaseMenuPopupOn(false) }} />}
+
     </div>
   );
 }
